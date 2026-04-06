@@ -1,0 +1,7 @@
+[project]
+name = "labelhook"
+version = "0.0.1"
+
+dependencies = [
+    # you can require a specific version of ballsdex here
+]
