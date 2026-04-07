@@ -18,5 +18,8 @@ To use, first add something in the Labels panel, then run `@botping labelmaker_r
 
 Subsequent spawns will have those buttons added. 
 
+## Example:
+<img width="905" height="701" alt="image" src="https://github.com/user-attachments/assets/24dc4f2a-9a5a-4509-8e84-3a595aa8199f" />
+
 ## Notes
-If combined with another app that monkeypatches BallSpawnView, one of them will break. This is an essentially unavoidable side effect of allowing hot reloading.
+If combined with another app that patches BallSpawnView, one of them will break. This is an essentially unavoidable side effect of allowing hot reloading.
