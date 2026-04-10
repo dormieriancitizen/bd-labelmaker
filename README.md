@@ -26,7 +26,7 @@ Label responses support keywords, such as:
 
 - `{user}` - Mentions the user who interacted with a button.
 - `{collectible}` - The collectible name.
-- `{collectibles}` - A plural version of `$collectible`.
+- `{collectibles}` - A plural version of `{collectible}`.
 - `{ball}` - The countryball's name.
 - `{rarity}` - The countryball's rarity.
 - `{emoji}` - The countryball's emoji.
