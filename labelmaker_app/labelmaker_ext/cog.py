@@ -43,7 +43,7 @@ class LabelmakerCog(commands.Cog):
                     style = ButtonStyle(label.style)
                     btn = Button(label=label.label, style=style)
                     btn.callback = callback
-                    self.add_item(btn)
+                    self.catch_row.add_item(btn)
 
             def format_response(self, interaction: Interaction["BallsDexBot"], response: str) -> str:
                 return response.format(
@@ -57,7 +57,7 @@ class LabelmakerCog(commands.Cog):
                 )
 
             async def on_timeout(self):
-                for child in self.children:
+                for child in self.catch_row.children:
                     if isinstance(child, Button):
                         child.disabled = True
                 await super().on_timeout()
