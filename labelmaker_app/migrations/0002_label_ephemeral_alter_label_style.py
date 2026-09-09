@@ -4,20 +4,17 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
-    dependencies = [
-        ('labelmaker_app', '0001_initial'),
-    ]
+    dependencies = [("labelmaker_app", "0001_initial")]
 
     operations = [
-        migrations.AddField(
-            model_name='label',
-            name='ephemeral',
-            field=models.BooleanField(default=False),
-        ),
+        migrations.AddField(model_name="label", name="ephemeral", field=models.BooleanField(default=False)),
         migrations.AlterField(
-            model_name='label',
-            name='style',
-            field=models.SmallIntegerField(choices=[(1, 'Primary'), (2, 'Secondary'), (3, 'Success'), (4, 'Danger')], default=2, help_text='Button color'),
+            model_name="label",
+            name="style",
+            field=models.SmallIntegerField(
+                choices=[(1, "Primary"), (2, "Secondary"), (3, "Success"), (4, "Danger")],
+                default=2,
+                help_text="Button color",
+            ),
         ),
     ]

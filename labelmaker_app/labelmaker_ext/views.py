@@ -21,13 +21,14 @@ class BallSpawnViewOverride(BallSpawnView):
         super().__init__(bot, model)
 
         for label in self.labels:
+
             async def callback(interaction: Interaction["BallsDexBot"], current_label: Label = label) -> None:
                 await interaction.response.send_message(
-                    self._format_response(interaction, current_label.response), ephemeral=current_label.ephemeral,
+                    self._format_response(interaction, current_label.response), ephemeral=current_label.ephemeral
                 )
 
             button = Button(
-                label=label.label, style=ButtonStyle(label.style), emoji=label.emoji if label.emoji != "" else None,
+                label=label.label, style=ButtonStyle(label.style), emoji=label.emoji if label.emoji != "" else None
             )
             button.callback = callback
 
@@ -70,8 +71,8 @@ class BallSpawnViewOverride(BallSpawnView):
             if label and not self.caught:
                 child.label = label.despawn_label or label.label
                 child.style = ButtonStyle(label.despawn_style or label.style)
-                child.emoji = label.despawn_emoji or None 
-            
+                child.emoji = label.despawn_emoji or None
+
             child.disabled = True
 
         await super().on_timeout()

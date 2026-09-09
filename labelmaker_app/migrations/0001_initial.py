@@ -4,20 +4,32 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Label',
+            name="Label",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('label', models.CharField(max_length=80)),
-                ('response', models.TextField(help_text='The text that will be displayed', max_length=2000)),
-                ('style', models.SmallIntegerField(choices=[(1, 'Primary'), (2, 'Secondary'), (3, 'Success'), (4, 'Danger'), (5, 'Link'), (6, 'Premium')], default=2, help_text='Button color')),
+                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("label", models.CharField(max_length=80)),
+                ("response", models.TextField(help_text="The text that will be displayed", max_length=2000)),
+                (
+                    "style",
+                    models.SmallIntegerField(
+                        choices=[
+                            (1, "Primary"),
+                            (2, "Secondary"),
+                            (3, "Success"),
+                            (4, "Danger"),
+                            (5, "Link"),
+                            (6, "Premium"),
+                        ],
+                        default=2,
+                        help_text="Button color",
+                    ),
+                ),
             ],
-        ),
+        )
     ]

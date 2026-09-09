@@ -5,18 +5,13 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-    dependencies = [
-        ("labelmaker_app", "0002_label_ephemeral_alter_label_style"),
-    ]
+    dependencies = [("labelmaker_app", "0002_label_ephemeral_alter_label_style")]
 
     operations = [
         migrations.AddField(
             model_name="label",
             name="caught_disable",
-            field=models.BooleanField(
-                default=True,
-                help_text="Whether the label will disable after a ball is caught.",
-            ),
+            field=models.BooleanField(default=True, help_text="Whether the label will disable after a ball is caught."),
         ),
         migrations.AddField(
             model_name="label",
@@ -31,23 +26,14 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name="label",
             name="caught_label",
-            field=models.CharField(
-                blank=True,
-                help_text="The label's text after a ball is caught.",
-                max_length=80,
-            ),
+            field=models.CharField(blank=True, help_text="The label's text after a ball is caught.", max_length=80),
         ),
         migrations.AddField(
             model_name="label",
             name="caught_style",
             field=models.SmallIntegerField(
                 blank=True,
-                choices=[
-                    (1, "Primary"),
-                    (2, "Secondary"),
-                    (3, "Success"),
-                    (4, "Danger"),
-                ],
+                choices=[(1, "Primary"), (2, "Secondary"), (3, "Success"), (4, "Danger")],
                 help_text="The label's button color after a ball is caught.",
                 null=True,
             ),
@@ -65,23 +51,14 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name="label",
             name="despawn_label",
-            field=models.CharField(
-                blank=True,
-                help_text="The label's text after a ball despawns.",
-                max_length=80,
-            ),
+            field=models.CharField(blank=True, help_text="The label's text after a ball despawns.", max_length=80),
         ),
         migrations.AddField(
             model_name="label",
             name="despawn_style",
             field=models.SmallIntegerField(
                 blank=True,
-                choices=[
-                    (1, "Primary"),
-                    (2, "Secondary"),
-                    (3, "Success"),
-                    (4, "Danger"),
-                ],
+                choices=[(1, "Primary"), (2, "Secondary"), (3, "Success"), (4, "Danger")],
                 help_text="The label's button color after a ball despawns.",
                 null=True,
             ),
@@ -99,41 +76,30 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name="label",
             name="enabled",
-            field=models.BooleanField(
-                default=True, help_text="Whether the label will appear."
-            ),
+            field=models.BooleanField(default=True, help_text="Whether the label will appear."),
         ),
         migrations.AlterField(
             model_name="label",
             name="ephemeral",
             field=models.BooleanField(
-                default=False,
-                help_text="Whether the label will only be visible to the user who interacted with it.",
+                default=False, help_text="Whether the label will only be visible to the user who interacted with it."
             ),
         ),
         migrations.AlterField(
-            model_name="label",
-            name="label",
-            field=models.CharField(help_text="The label's text.", max_length=80),
+            model_name="label", name="label", field=models.CharField(help_text="The label's text.", max_length=80)
         ),
         migrations.AlterField(
             model_name="label",
             name="response",
             field=models.TextField(
-                help_text="The response that will be sent after pressing the label's button.",
-                max_length=2000,
+                help_text="The response that will be sent after pressing the label's button.", max_length=2000
             ),
         ),
         migrations.AlterField(
             model_name="label",
             name="style",
             field=models.SmallIntegerField(
-                choices=[
-                    (1, "Primary"),
-                    (2, "Secondary"),
-                    (3, "Success"),
-                    (4, "Danger"),
-                ],
+                choices=[(1, "Primary"), (2, "Secondary"), (3, "Success"), (4, "Danger")],
                 default=2,
                 help_text="The label's button color.",
             ),
