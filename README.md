@@ -32,6 +32,10 @@ Label responses support keywords, such as:
 - `{emoji}` - The countryball's emoji.
 - `{discord}` - Your bot's Discord server invite link.
 
+The **Despawn state** and **Caught state** sections in the panel control how the label will change after its ball despawns or is caught, respectively. It should be fairly self-explanatory.
+
+**Caught state** also includes a section for whether the label will disable after being caught (enabled by default)
+
 ## Example
 
 <img width="905" height="701" alt="image" src="https://github.com/user-attachments/assets/24dc4f2a-9a5a-4509-8e84-3a595aa8199f" />
