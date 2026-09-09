@@ -41,17 +41,11 @@ class BallSpawnViewOverride(BallSpawnView):
     @caught.setter
     def caught(self, value: bool):
         if value:
-            for item in self.catch_row.children:
-                if isinstance(item, Button):
-                    item.disabled = True
-
             for button, label in self.label_map.items():
-                if not label.caught_override:
-                    continue
-
-                button.label = label.caught_label
-                button.style = ButtonStyle(label.caught_style)
-                button.emoji = label.caught_emoji if label.caught_emoji != "" else None
+                button.label = label.caught_label or label.label
+                button.style = ButtonStyle(label.caught_style or label.style)
+                button.emoji = label.caught_emoji or None
+                button.disabled = label.caught_disable
 
         self._caught = value
 
@@ -73,10 +67,10 @@ class BallSpawnViewOverride(BallSpawnView):
 
             label = self.label_map.get(child)
 
-            if label and label.despawn_override and not (self.caught and label.caught_override):
-                child.label = label.despawn_label
-                child.style = ButtonStyle(label.despawn_style)
-                child.emoji = label.despawn_emoji if label.despawn_emoji != "" else None 
+            if label and not self.caught:
+                child.label = label.despawn_label or label.label
+                child.style = ButtonStyle(label.despawn_style or label.style)
+                child.emoji = label.despawn_emoji or None 
             
             child.disabled = True
 

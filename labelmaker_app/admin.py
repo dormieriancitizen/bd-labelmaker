@@ -31,12 +31,11 @@ class LabelAdmin(admin.ModelAdmin):
             },
         ),
         (
-            "Despawn state overrides",
+            "Despawn state",
             {
                 "classes": ("collapse",),
                 "description": "Optional appearance overrides applied when a ball despawns.",
                 "fields": (
-                    "despawn_override",
                     "despawn_label",
                     "despawn_emoji",
                     "despawn_style",
@@ -44,15 +43,15 @@ class LabelAdmin(admin.ModelAdmin):
             },
         ),
         (
-            "Caught state overrides",
+            "Caught state",
             {
                 "classes": ("collapse",),
                 "description": "Optional appearance overrides applied when a ball is caught.",
                 "fields": (
-                    "caught_override",
                     "caught_label",
                     "caught_emoji",
                     "caught_style",
+                    "caught_disable",
                 ),
             },
         ),
