@@ -2,7 +2,9 @@
 name = "labelmaker_app"
 version = "1.0.1"
 
-dependencies = [ ]
+dependencies = [
+ "emoji>=2.15.0",
+]
 
 description = "Monkeypatch BallSpawnView for fun and profit"
 license = "MIT"
